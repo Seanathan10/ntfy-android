@@ -6,28 +6,58 @@
         <item name="android:colorBackground">@color/white</item> <!-- background -->
         <item name="android:statusBarColor">@color/teal</item>
         <item name="actionModeBackground">@color/teal_dark</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="DangerText" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/red_dark</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="FloatingActionButton" parent="@style/Widget.MaterialComponents.FloatingActionButton">
         <item name="tint">@color/white</item>
         <item name="backgroundTint">@color/teal</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="CardView" parent="@style/Widget.MaterialComponents.CardView">
         <item name="cardBackgroundColor">@color/white</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="CardViewBackground">
         <item name="android:background">@color/gray_400</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <!-- Rounded corners in images, see https://stackoverflow.com/a/61960983/1440785 -->
     <style name="roundedCornersImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">5dp</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 </resources>

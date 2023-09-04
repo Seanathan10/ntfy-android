@@ -20,22 +20,47 @@
         <!-- Action bar background & text color -->
         <item name="colorSurface">@color/black_800b</item>
         <item name="colorOnSurface">@color/white</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="DangerText" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/red_light</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="FloatingActionButton" parent="@style/Widget.MaterialComponents.FloatingActionButton">
         <item name="tint">@color/black_900</item>
         <item name="backgroundTint">@color/teal_light</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="CardView" parent="@style/Widget.MaterialComponents.CardView">
         <item name="cardBackgroundColor">@color/black_800b</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 
     <style name="CardViewBackground">
         <item name="android:background">@color/black_900</item>
+
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
     </style>
 </resources>
