@@ -12,18 +12,24 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.text.method.LinkMovementMethod
+import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.WindowInsets
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -75,6 +81,38 @@ class MainActivity : AppCompatActivity(), ActionMode.Callback, AddFragment.Subsc
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        WindowCompat.setDecorFitsSystemWindows( window, false );
+
+        val constraintLayout = findViewById<ConstraintLayout>(R.id.main_page)
+
+        val tv = TypedValue()
+        var actionBarHeight = 0
+        if( this.theme.resolveAttribute(R.attr.actionBarSize, tv, true ) ) {
+            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
+            Toast.makeText(applicationContext, actionBarHeight.toString(), Toast.LENGTH_SHORT).show()
+        }
+
+
+
+
+
+
+        constraintLayout.setOnApplyWindowInsetsListener { v, insets ->
+            val m = insets.systemWindowInsetTop
+//            v.updateLayoutParams<ConstraintLayout> { -> () }
+//            v.layoutParams.setMargins(0, m, 0, 0)
+
+            v.setPadding(
+                0,
+                0,
+                0,
+                0
+            )
+
+            insets
+        }
+
 
         Log.init(this) // Init logs in all entry points
         Log.d(TAG, "Create $this")

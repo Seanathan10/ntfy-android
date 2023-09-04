@@ -100,5 +100,8 @@
         <Preference
                 app:key="@string/settings_about_version_key"
                 app:title="@string/settings_about_version_title"/>
+        <Preference
+            app:key=""
+            app:title=""/>
     </PreferenceCategory>
 </PreferenceScreen>
